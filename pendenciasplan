@@ -4,7 +4,7 @@ df_principal = pd.read_excel("/content/PendenciasQualicard.xlsx", engine="openpy
 df_status = pd.read_csv("/content/esteira (24).csv", sep=";", encoding="latin1")
 #planilha com status, utilizei latin1 para converter as letras.
 
-principal_filtrada = principal[[
+df_principal_filtrada = principal[[
     "Nr Proposta",
     "Convênio",
     "Nome",
@@ -13,7 +13,7 @@ principal_filtrada = principal[[
 ]]
 #colunas principais para analise e acoplagem
 
-status_filtrada = status[[
+df_status_filtrada = status[[
     "ADE",
     "Status",
     "Agente"
