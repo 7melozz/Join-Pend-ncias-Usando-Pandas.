@@ -25,9 +25,9 @@ df_principal_filtrada["Nr Proposta"] = df_principal_filtrada["Nr Proposta"].asty
 df_status_filtrada["ADE"] = df_status_filtrada["ADE"].astype(str)
 #filtrando por "ADE" e convertendo para string utilizando como meio de comparação.
 
-status_filtrada = status_filtrada.rename(columns={"ADE": "Nr Proposta"})
+df_status_filtrada = df_status_filtrada.rename(columns={"ADE": "Nr Proposta"})
 #criei e alterei o nome da coluna
 
-resultado = principal_filtrada.merge(status_filtrada, on="Nr Proposta", how="left")
+resultado = df_principal_filtrada.merge(df_status_filtrada, on="Nr Proposta", how="left")
 
 resultado.to_excel("resultado_final.xlsx", index=False)
