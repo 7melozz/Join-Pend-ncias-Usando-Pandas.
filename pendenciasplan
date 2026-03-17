@@ -1,7 +1,7 @@
 import pandas as pd
 df_principal = pd.read_excel("/content/PendenciasQualicard.xlsx", engine="openpyxl")
 #planilha primaria
-df_status = pd.read_csv("/content/esteira (24).csv", sep=";")
+df_status = pd.read_csv("/content/esteira (20).csv", sep=";")
 #planilha com status
 
 df_principal_filtrada = df_principal[[
@@ -9,13 +9,14 @@ df_principal_filtrada = df_principal[[
     "Convênio",
     "Nome",
     "CPF",
+    "Atividade",
+    "Valor Liberado",
     "Atividade"
 ]]
 #colunas principais para analise e acoplagem
 
 df_status_filtrada = df_status[[
     "ADE",
-    "Status",
     "Agente"
 ]]
 #levando essa para principal, para que possamos converter em outra planilha
@@ -30,4 +31,4 @@ df_status_filtrada = df_status_filtrada.rename(columns={"ADE": "Nr Proposta"})
 
 resultado = df_principal_filtrada.merge(df_status_filtrada, on="Nr Proposta", how="left")
 
-resultado.to_excel("resultado_final.xlsx", index=False)
+resultado.to_excel("Pendências Qualicard.xlsx", index=False)
