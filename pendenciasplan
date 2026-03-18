@@ -9,7 +9,6 @@ df_principal_filtrada = df_principal[[
     "Convênio",
     "Nome",
     "CPF",
-    "Atividade",
     "Valor Liberado",
     "Atividade"
 ]]
